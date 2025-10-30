@@ -6,7 +6,7 @@ const Banner = () => {
             
             <div>
                 <h1 className='lg:text-4xl text-2xl font-bold mb-5'>Books to <br />freshen up <br />your <br />bookshelf</h1>
-                <button className="btn btn-active btn-success text-sm lg:text-2xl">View The List</button>
+                <button className="btn btn-active btn-success text-sm lg:text-2xl text-white">View The List</button>
             </div>
 
             <div className='mb-5'><img className='lg:w-72 lg:h-84 w-44' src={bookimage} alt="" /></div>

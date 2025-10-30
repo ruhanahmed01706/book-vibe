@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Navber = () => {
     const links = <>
 
-        <li className='m-3 text-xl'>Home</li>
-        <li className='m-3 text-xl'>Listed Books</li>
-        <li className='m-3 text-xl'>Page To Read</li>
+        <Link><li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Home</li></Link>
+        <Link to={"/about"}><li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Listed Books</li></Link>
+        <li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Page To Read</li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -32,8 +33,8 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-3">
-                <button className="btn btn-active btn-success">Sign In</button>
-                <button className="btn btn-active btn-info">Sign In</button>
+                <button className="btn btn-active btn-success text-white">Sign In</button>
+                <button className="btn btn-active btn-info text-white">Sign In</button>
             </div>
         </div>
     );
