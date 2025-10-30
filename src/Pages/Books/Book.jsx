@@ -1,25 +1,32 @@
 import React from 'react';
+import { FaStarHalfAlt } from "react-icons/fa";
 
 const Book = ({ book }) => {
     console.log(book);
 
     return (
-        <div className="card bg-base-100 w-96 shadow-sm">
-            <figure>
-                <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes" />
+        <div className="card bg-base-1006 shadow-sm p-4">
+            <figure className='bg-gray-100 rounded-2xl p-5'>
+                <img className='h-40 w-28'
+                    src={book.image}
+                    alt="Book" />
             </figure>
-            <div className="card-body">
-                <h2 className="card-title">
-                    Card Title
-                    <div className="badge badge-secondary">NEW</div>
-                </h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+            <div className="grid gap-3">
+                <div className="card-actions mt-2">
+                    <div className="badge badge-outline border-none bg-gray-100 rounded-2xl text-green-500">{book.tags[0]}</div>
+                    <div className="badge badge-outline border-none  bg-gray-100 rounded-2xl text-green-500">{book.tags[1]}</div>
                 </div>
+                <h2 className="card-title text-2xl">
+                    {book.bookName}
+                
+                </h2>
+                <p className='text-xl border-b border-dashed'>By: {book.author}</p>
+
+                <div className='flex justify-between'>
+                    <p className='text-xl'>{book.category}</p>
+                    <p className='flex text-xl items-center gap-0.5'>{book.rating} <span className='text-sm'><FaStarHalfAlt /></span></p>
+                </div>
+                
             </div>
         </div>
     );
