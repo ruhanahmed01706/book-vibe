@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Navber = () => {
     const links = <>
 
-        <Link><li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Home</li></Link>
+        <Link to={"/"}><li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Home</li></Link>
         <Link to={"/about"}><li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Listed Books</li></Link>
         <li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Page To Read</li>
     </>

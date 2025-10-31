@@ -3,10 +3,10 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { Link } from 'react-router';
 
 const Book = ({ book }) => {
-    console.log(book);
+    // console.log(book);
 
     return (
-        <Link to={`bookditails/${book.bookId}`}><div className="card bg-base-1006 shadow-sm p-4">
+        <Link to={`/bookditails/${book.bookId}`}><div className="card bg-base-1006 shadow-sm p-4">
             <figure className='bg-gray-100 rounded-2xl p-5'>
                 <img className='h-40 w-28'
                     src={book.image}
