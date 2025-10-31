@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoreDB } from '../../Utilitis/addToDb';
 
 const BookDitails = () => {
     const { id } = useParams()
@@ -7,9 +8,17 @@ const BookDitails = () => {
     const praId = parseInt(id)
     // console.log(typeof(praId));
     const bookData = useLoaderData();
+    const bookArray = Object.values(bookData);
     // console.log(bookData);
-    const singleBook = bookData.find(book => book.bookId === praId);
-    console.log(singleBook);
+    const singleBook = bookArray.find(book => book.bookId === praId);
+    // console.log(singleBook);
+
+    const handleMarkRead =(id)=>{
+
+       addToStoreDB(id);
+        
+
+    }
 
 
 
@@ -45,8 +54,8 @@ const BookDitails = () => {
                         <p>{singleBook.rating}</p>
                     </div>
                 </div>
-                <button className="btn btn-info m-3">Read</button>
-                <button className="btn btn-success m-3">WishList</button>
+                <button onClick={()=> handleMarkRead(id)} className="btn btn-info m-3">Mark As Read</button>
+                <button className="btn btn-success m-3">Add To WishList</button>
 
             </div>
         </div>
