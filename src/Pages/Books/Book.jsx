@@ -2,7 +2,7 @@ import React from 'react';
 import { FaStarHalfAlt } from "react-icons/fa";
 import { Link } from 'react-router';
 
-const Book = ({ book }) => {
+const Book = ({ book,wbook }) => {
     // console.log(book);
 
     return (

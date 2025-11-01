@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addToStoreDB } from '../../Utilitis/addToDb';
+import { addToWishlist } from '../../Utilitis/addToWishlist';
 
 const BookDitails = () => {
     const { id } = useParams()
@@ -16,6 +17,13 @@ const BookDitails = () => {
     const handleMarkRead =(id)=>{
 
        addToStoreDB(id);
+        
+
+    }
+
+    const handleAddToWishList =(id)=>{
+
+       addToWishlist(id);
         
 
     }
@@ -55,7 +63,7 @@ const BookDitails = () => {
                     </div>
                 </div>
                 <button onClick={()=> handleMarkRead(id)} className="btn btn-info m-3">Mark As Read</button>
-                <button className="btn btn-success m-3">Add To WishList</button>
+                <button onClick={()=> handleAddToWishList(id)} className="btn btn-success m-3">Add To WishList</button>
 
             </div>
         </div>
