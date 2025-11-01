@@ -1,15 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
+
 
 const Navber = () => {
     const links = <>
 
-        <Link to={"/"}><li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Home</li></Link>
-        <Link to={"/about"}><li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Listed Books</li></Link>
-        <li className='m-3 text-xl hover:border px-2 hover:border-green-400 hover:text-green-400'>Page To Read</li>
+        <NavLink to={"/"}
+
+            className={({ isActive }) =>
+                isActive ? "font-bold underline" : "hover:text-green-400"
+            }
+
+        ><li className='m-3 text-xl'>Home</li></NavLink>
+
+        <NavLink to={"/about"}
+            className={({ isActive }) =>
+                isActive ? "font-bold underline" : "hover:text-green-400"
+            }
+        ><li className='m-3 text-xl '>Listed Books</li></NavLink>
+        <NavLink to={"/readpage"} className={({ isActive }) =>
+            isActive ? "font-bold underline" : "hover:text-green-400"
+        }
+        ><li className='m-3 text-xl '>Page To Read</li></NavLink>
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

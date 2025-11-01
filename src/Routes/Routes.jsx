@@ -5,6 +5,7 @@ import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home';
 import About from '../Pages/About/About';
 import BookDitails from '../Pages/BookDitails/BookDitails';
+import ReadPage from '../Pages/ReadPage/ReadPage';
 
 export const router = createBrowserRouter([
   {
@@ -14,18 +15,22 @@ export const router = createBrowserRouter([
     children:[
         {
             index:true,
-            loader:()=>fetch('booksData.json'),
+            loader:()=>fetch('/booksData.json'),
             Component:Home
         },
         {
             path:'/about',
-            loader:()=>fetch('booksData.json'),
+            loader:()=>fetch('/booksData.json'),
             Component:About
         },
         {
             path:"/bookditails/:id",
-            loader:()=>fetch('booksData.json'),
+            loader:()=>fetch('/booksData.json'),
             Component:BookDitails
+        },
+        {
+          path:"/readpage",
+          Component:ReadPage
         }
 
 
