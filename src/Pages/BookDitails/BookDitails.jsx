@@ -2,6 +2,10 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addToStoreDB } from '../../Utilitis/addToDb';
 import { addToWishlist } from '../../Utilitis/addToWishlist';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const BookDitails = () => {
     const { id } = useParams()
@@ -17,7 +21,11 @@ const BookDitails = () => {
     const handleMarkRead =(id)=>{
 
        addToStoreDB(id);
-        
+        Swal.fire({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success"
+});
 
     }
 
